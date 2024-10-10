@@ -62,6 +62,21 @@ const Sidebar = () => {
     setMaxPrice(val ? parseFloat(val) : undefined);
   };
 
+  const handleRadioChangeCategories = (c: string) => {
+    setSelectedCategory(c);
+  };
+
+  const handleKeywordClick = (k: string) => {
+    setKeyword(k);
+  };
+
+  const handleResetFilter = () => {
+    setSelectedCategory("");
+    setSearchQuery("");
+    setKeyword("");
+    setMinPrice(undefined);
+    setMaxPrice(undefined);
+  };
   return (
     <div className="w-64 p-5 h-screen">
       <h1 className="text-2xl font-bold mb-10 mt-4">EliteBuy🛒</h1>
@@ -101,7 +116,11 @@ const Sidebar = () => {
                 type="radio"
                 name="category"
                 value={c}
+                onChange={() => {
+                  handleRadioChangeCategories(c);
+                }}
                 className="mr-2 w-[16px] h-[16px]"
+                checked={selectedCategory === c}
               />
               {c.toUpperCase()}
             </label>
@@ -116,6 +135,7 @@ const Sidebar = () => {
             {keywords.map((k, index) => (
               <button
                 key={index}
+                onClick={() => handleKeywordClick(k)}
                 className="border rounded text-left w-full block mb-2 px-4 py-2  hover:bg-gray-200"
               >
                 {k.toUpperCase()}
@@ -124,7 +144,10 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <button className="bg-black text-white rounded px-4 py-2 w-full block mb-2 mt-4 hover:bg-gray-700">
+        <button
+          className="bg-black text-white rounded px-4 py-2 w-full block mb-2 mt-4 hover:bg-gray-700"
+          onClick={handleResetFilter}
+        >
           Reset Filter
         </button>
       </section>
