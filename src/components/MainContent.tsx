@@ -88,6 +88,29 @@ const MainContent = () => {
     }
   };
 
+  const getPaginationButton = () => {
+    const buttons: number[] = [];
+
+    let startPage = Math.max(1, currentPage - 2);
+    let endPage = Math.min(totalNumberOfPages, currentPage + 2);
+
+    if (currentPage - 2 < 1) {
+      endPage = Math.min(totalNumberOfPages, endPage + (2 - currentPage - 1));
+    }
+    if (currentPage + 2 > totalNumberOfPages) {
+      startPage = Math.min(
+        1,
+        startPage - (2 - totalNumberOfPages - currentPage)
+      );
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      buttons.push(i);
+    }
+
+    return buttons;
+  };
+
   return (
     <section className="xl:w-[55rem] lg:W-[55rem] sm:w-[40rem] xs:w-[20rem] p-5">
       <div className="mb-5">
@@ -143,6 +166,26 @@ const MainContent = () => {
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
+            className="border px-4 py-2 mx-2 rounded-full"
+          >
+            Previous
+          </button>
+          <div className="flex flex-wrap justify-center">
+            {getPaginationButton().map((page) => (
+              <button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`border px-4 py-2 mx-2 rounded-full ${
+                  page === currentPage ? "bg-black text-white" : ""
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalNumberOfPages}
             className="border px-4 py-2 mx-2 rounded-full"
           >
             Next
