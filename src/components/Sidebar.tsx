@@ -30,7 +30,7 @@ const Sidebar = () => {
     "Fashion",
     "trend",
     "shoes",
-    "shirts",
+    "Essence",
   ]);
 
   useEffect(() => {
