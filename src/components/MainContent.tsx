@@ -112,13 +112,13 @@ const MainContent = () => {
   };
 
   return (
-    <section className="xl:w-[50rem] lg:W-[50rem] sm:w-[40rem] xs:w-[20rem] p-5">
+    <section className="xl:w-[45rem]  lg:W-[45rem] sm:w-[40rem] xs:w-[20rem] p-5">
       <div className="mb-5">
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <div className="relative mb-5 mt-5">
             <button
               onClick={() => setDropDown(!DropDown)}
-              className="border pz-4 rounded-full flex items-center"
+              className="border px-3 py-1 rounded-full flex items-center"
             >
               <Tally3 className="mr-2" />
               {filter === "all"

@@ -10,7 +10,7 @@ export default function App() {
       <div className="flex h-screen">
         <Sidebar />
 
-        <div className="rounded w-full flex justify-between flex-wrap">
+        <div className="rounded w-full flex justify-center flex-wrap">
           <Routes>
             <Route path="/" element={<MainContent />} />
             <Route path="/product/:id" element={<ProductPage />} />

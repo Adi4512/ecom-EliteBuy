@@ -79,17 +79,25 @@ const Sidebar = () => {
   };
   return (
     <div className="w-64 p-5 h-screen">
-      <h1 className="text-2xl font-bold mb-10 mt-4">EliteBuy🛒</h1>
+      <h1 className="text-2xl font-bold mb-10 mt-4 flex justify-center items-center">
+        <img
+          src="/public/logo.png"
+          alt="logo"
+          width={70}
+          className="rounded-full mr-3"
+        />
+        <a href="/"> EliteBuy</a>
+      </h1>
       <section>
         <input
           type="text"
-          className="border-2 rounded px-2 sm:mb-0"
+          className="border-2 rounded px-2 py-3 w-full sm:mb-0"
           placeholder="Search Product"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
 
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center  mt-3 items-center">
           <input
             type="text"
             className="border-2 mr-2 px-5 py-3 mb-3 w-full"
