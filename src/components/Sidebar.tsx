@@ -80,7 +80,7 @@ const Sidebar = () => {
     <div className="w-64 p-5 h-screen">
       <h1 className="text-2xl font-bold mb-10 mt-4 flex justify-center items-center">
         <img
-          src="/public/logo.png"
+          src="./logo.png"
           alt="logo"
           width={70}
           className="rounded-full mr-3"
