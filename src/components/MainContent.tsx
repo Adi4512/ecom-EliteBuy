@@ -165,11 +165,11 @@ const MainContent = () => {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center mt-5">
+        <div className="flex flex-col sm:flex-row justify-between items-center mt-5 ">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className="border px-4 py-2 mx-2 rounded-full"
+            className="border px-4 py-2 mx-2 rounded-full hover:bg-black hover:text-white"
           >
             Previous
           </button>
@@ -189,7 +189,7 @@ const MainContent = () => {
           <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalNumberOfPages}
-            className="border px-4 py-2 mx-2 rounded-full"
+            className="border px-4 py-2 mx-2 rounded-full hover:bg-black hover:text-white"
           >
             Next
           </button>

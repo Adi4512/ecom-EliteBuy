@@ -35,7 +35,7 @@ const ProductPage = () => {
   return (
     <div className="p=5 w=[60%]">
       <button
-        className="mb-5 px-4 py-2 bg-black text-white rounded"
+        className="ml-5 hover:bg-gray-200 hover:text-black mt-5 mb-8 px-4 py-2 bg-black text-white rounded"
         onClick={() => navigate(-1)}
       >
         Back
