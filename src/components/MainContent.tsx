@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useFilter } from "./FilterContext";
-import { SearchCheck, Tally3 } from "lucide-react";
+import { Tally3 } from "lucide-react";
 import axios from "axios";
 import BookCard from "./BookCard";
 const MainContent = () => {
